@@ -1,0 +1,36 @@
+
+/************Reset**************/
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section { 
+	margin: 0; 
+	padding: 0;
+	border: 0;
+} 
+ol, ul { 
+	list-style: none; 
+}
+header, footer, nav, section, article, hgroup, figure {
+	display: block;	
+}
+legend {
+	display: none;
+}
+/************End Reset**************/
+
+/************Global**************/
+
+body { 
+	font: 100%/1.5 'Gill Sans', 'Droid Sans', 'Calibri', 'Lucida Grande', 'Trebuchet MS', 'Helvetica Neue', 'Arial', sans-serif; 
+	color: #000;
+	background: url(../img/linen_texture.png) #fff; 
+	text-align: center;
+}
+#main{
+	width:70%;
+	margin: auto;
+	padding: 10%;
+	  background-color: rgba(153,153,153,0.7);
+    border: 1px solid #777;
+}
+img{
+	max-width: 100%;
+}

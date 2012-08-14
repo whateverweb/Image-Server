@@ -1,4 +1,4 @@
-##### Serving images from wew.io
+# Serving images from wew.io
 
 ### Intro
 The imageserver will server-side scale and adapt images to the end-user's current context. It supports both responsive and static designs. 
@@ -9,11 +9,21 @@ The imageserver will server-side scale and adapt images to the end-user's curren
 
 ### Examples
 ## Basic - static design
-To scale an image to an absolute width 320px, create your #img#-url like in the example below.
+To scale an image to an absolute width 320px, create your _img_-url like in the example below. If requested width exceeds requesting device's capability returned image will be scaled to 100% of device width.
 
 	<img src="http://whateverweb.com/img/px_320/http://farm9.staticflickr.com/8154/7705240114_fdc69e5882_k_d.jpg" alt="Butterfly" />
 
-## Advances - responsive design
+The URL pattern is: 'http://whateverweb.com/img/&lt;option1&gt;/&lt;option2&gt;/&lt;URL of full-size image&gt;'
+
+## Advanced - responsive design
 
 
-### details
+### Details
+
+#### Available parameters
+| Name and value	| Description									|
+| ----------------- | --------------------------------------------- |
+| vpw_2880			| Viewport width. Ignored if used with cookie	|
+| px_320			| Target width in pixels						|
+| bp_w              | Default breakpoint, 'w'                       |
+| w_40              | Scale image to 40% of width in breakpoint 'w' |

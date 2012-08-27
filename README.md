@@ -18,7 +18,7 @@ The URL pattern is: 'http://wew.io/img/option1/option2/URL-to-full-size-image'
 ## Advanced - responsive design
 In 'responsive' mode, the image sizing is controlled using a combination of browser javascript and a cookie. The script defines the desired breakpoints and default viewport, which in turn is communicated to the server using a cookie. In this mode, the URL can reference the (cookie) breakpoints by name and have the server base its operations on them.
 
-See [example](examples/cookie-example).
+See [example](tree/master/examples/cookie-example).
 
 ### Details
 

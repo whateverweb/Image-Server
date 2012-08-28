@@ -11,20 +11,13 @@
     //Set width of screen in a cookie
     (function (w, d) {
 
-        <!--
         //set width to vpw
         var e = d.documentElement, g = d.getElementsByTagName('body')[0], vpw = w.innerWidth || e.clientWidth || g.clientWidth;
-        //-->
 
         var existing = readCookie("RESS");
         var bp;
 
         //set default grid values
-        console.log("existing: " + existing);
-        if (existing != null) {
-            console.log("existing: " + existing);
-        }
-
         if (vpw >= 1024) {
             vpw = 1024;
             bp = "w";
@@ -37,6 +30,6 @@
         // Set a cookie with the client side capabilities.
         var ccapDate = new Date()
         ccapDate.setFullYear(ccapDate.getFullYear() + 1);
-        d.cookie = 'RESS=vpw.' + vpw + '|bp.' + bp + '; expires=' + ccapDate.toUTCString();
+        d.cookie = 'RESS=vpw.' + vpw + '|bp.' + bp + '; domain=*'
 
     }(window, document));

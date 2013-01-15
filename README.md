@@ -54,6 +54,22 @@ See [example](https://github.com/whateverweb/Image-Server/tree/master/examples/c
 | `px_<number>`			| Resize to a specific size|px_320|
 | `@_<number>`     | The pixel ratio: For example `@_2` for Retina displays. Also note that high-DPI images are compressed much more than other images, so the image weight is quite acceptable.| @_1.5|
 
+<table>
+  <tr>
+    <th>Name and value</th><th>Description</th><th>Example</th>
+  </tr>
+  <tr>
+    <td><code>px_<number></code></td>
+    <td>Resize to a specific size</td>
+    <td>px_320</td>
+  </tr>
+  <tr>
+    <td><code>@_<number></code></td>
+    <td>The pixel ratio: For example `@_2` for Retina displays. Also note that high-DPI images are compressed much more than other images, so the image weight is quite acceptable.</td>
+    <td>@_1.5</td>
+  </tr>  
+</table>
+
 ### RWD mode
 To get the most out of "RWD mode", a short little JavaScript is needed to communicate viewport size and breakpoint info to the server.
 	
@@ -109,16 +125,45 @@ In this mode, required parameters are:
 #### Available parameters 
 
 
-| Name and value	| Description				|Example|
-| ----------------- | --------------------------------------------- |
-| `@_<number>`     | The pixel ratio: For example `@_2` for Retina displays| @_1.5|
-| `vpw_<number>`| Set the default vierport width, if nothing else is provided|vpw_960|
-| `bp_*`              | Set the default breakpoint identified by an alpha-numeric value.                       |bp_wide
-| `pc` or `px` 				|Unit used by Image server when resizing. `pc` and `px` supported.						|px|
-| `wide_<number>`              | Scale image to `<number>` `pc` or `px` in breakpoint 'wide' | wide_100|
-| `medium_<number>`              | Scale image to `<number>` `pc` or `px`  in breakpoint 'medium' |medium_70|
-| `narrow_<number>`              | Scale image to `<number>` `pc` or `px`  in breakpoint 'narrow' | narrow_100|
-|…|Goes on for as many breakpoints as needed. Remember to be consistent with the values defined int eh JavaScript too.|
+<table>
+  <tr>
+    <th>Name and value</th><th>Description</th><th>Example</th>
+  </tr>
+  <tr>
+    <td><code>@_<number></code></td>
+    <td>The pixel ratio: For example `@_2` for Retina displays</td>
+    <td>@_1.5</td>
+  </tr>
+  <tr>
+    <td><code>vpw_<number></code></td>
+    <td>Set the default vierport width, if nothing else is provided</td>
+    <td>vpw_960</td>
+  </tr>  <tr>
+    <td><code>bp_*</code></td>
+    <td>Set the default breakpoint identified by an alpha-numeric value.</td>
+    <td>bp_wide</td>
+  </tr>  <tr>
+    <td><code>pc</code> or <code>px</code></td>
+    <td>Unit used by Image server when resizing. `pc` and `px` supported.</td>
+    <td>pc</td>
+  </tr><tr>
+    <td><code>wide_<number></code></td>
+    <td>Scale image to <code><number></code> <code>pc</code> or <code>px</code>  in breakpoint 'wide'</td>
+    <td>wide_90</td>
+  </tr><tr>
+    <td><code>medium_<number></code></td>
+    <td>Scale image to <code><number></code> <code>pc</code> or <code>px</code>  in breakpoint 'medium'</td>
+    <td>medium_80</td>
+  </tr><tr>
+    <td><code>narrow_<number></code></td>
+    <td>Scale image to <code><number></code> <code>pc</code> or <code>px</code>  in breakpoint 'narrow'</td>
+    <td>narrow_100</td>
+  </tr><tr>
+    <td><code>...</code></td>
+    <td>Goes on for as many breakpoints as needed. Remember to be consistent with the values defined int eh JavaScript too.</td>
+    <td></td>
+  </tr>
+</table>
 
 -----
 [Image credits](http://www.flickr.com/photos/bengchye_loo/369525606/sizes/o/in/photostream/) in this doc and examples.

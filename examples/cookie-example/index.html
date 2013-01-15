@@ -8,7 +8,41 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="../css/style.css">
 	<!-- script to generate imageserver cookie, needs to go in the head -->
-	<script src="js/imageserver.js"></script>
+	<script>
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+    //Set width of screen in a cookie
+    (function (w, d) {
+        //set width to vpw
+        var e = d.documentElement, g = d.getElementsByTagName('body')[0], vpw = w.innerWidth || e.clientWidth || g.clientWidth;
+        console.log(e);
+        var existing = readCookie("RESS");
+        var bp;
+
+        //set default grid values
+        if (vpw >= 1024) {
+            vpw = 1024;
+            bp = "w";
+        } else if (vpw >= 768) {
+            bp = "m";
+        } else {
+            bp = "n";
+        }
+
+        // Set a cookie with the client side capabilities.
+        var ccapDate = new Date()
+        ccapDate.setFullYear(ccapDate.getFullYear() + 1);
+        d.cookie = 'RESS=vpw.' + vpw + '|bp.' + bp + '; domain=.wew.io'
+    }(window, document));
+	</script>
 </head>
 <body>
 <div id="container">
@@ -16,14 +50,148 @@
 	<h1>Image Server Examples</h1>
 	</header>
 	<div id="main" role="main">
-		<h2>Cookie based request with 3 defined breakpoints</h2>
-		<p>This example does a cookie based resize.</p>
-		<img src="http://app-000000.wew.io/img/vpw_768/bp_m/pc/w_80/m_60/n_40/http://farm9.staticflickr.com/8154/7705240114_fdc69e5882_k_d.jpg" alt="Butterfly" />
+		<p>
+			The site has 3 breakpoints.
+		</p>
+		<ol>
+			<li>Narrow (up to 768px width)</li>
+			<li>Medium (up to 1024px)</li>
+			<li>Wide (above 1024px)</li>
+		</ol>
+		<p>We use 2 techniques:</p>
+		<ol>
+			<li>We set a cookie in head that says something about viewport size + the current breakpoint. Example: Viewport width = 1024 and breakpoint = wide.</li>
+			<li>We have an image server that can scale images based on the size that are set in the cookie and also have fallback values if cookies or javascript is not available.</li>
+		</ol>
+
+		
+		<p style="font-weight:bold">
+			NOTE: This example need cookies to function correctly. The image server and the site need to run on the same domain to exchage info throgh cookies.
+		</p>
+        <ul>
+            <li><strong>vpw_1024</strong> = the default width if nothing is set in the cookie</li>
+            <li><strong>bp_w</strong> = the default breakpoint if nothing is set in the cookie</li>
+            <li><strong>w_31</strong> = the image should be 31% of the screen size in the wide breakpoint</li>
+            <li><strong>m_48</strong> = the image should be 48% of the screen size in the medium breakpoint</li>
+            <li><strong>n_98</strong> = the image should be 98% of the screen size in the narrow breakpoint</li>
+        </ul>
+        <p>
+            PS. we have a max of 1024px on this site.
+        </p>
+
+        <div class="g1 grid">
+            <h3>First test</h3>
+        </div>
+
+		<div class="g3 grid">
+ 	       <div class="image">
+				<img id ="img3" src="http://demo.wew.io/img/vpw_1024/bp_w/pc/w_31/m_48/n_98//http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
+			</div>
+        </div>
+        <div class="g4 grid">
+            <div class="text">
+                The area containing the image in this row is defined to be:<br/>
+                <ul>
+                    <li>31% in the wide breakpoint</li>
+                    <li>48% in medium breakpoint</li>
+                    <li>98% in the narrow breakpoint</li>
+                </ul>
+                <h4>Actual values</h4>
+                <div id="img3-debug"></div>
+            </div>
+        </div>
+        
+        <div class="cf"></div>
+        <div class="g1 grid">
+            <h3>Second test</h3>
+        </div>
+		<div class="g2 grid">
+        	<div class="image">
+				<img id="img2" src="http://demo.wew.io/img/vpw_1024/bp_w/pc/w_48/m_48/n_98//http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
+			</div>
+        </div>
+       	<div class="g2 grid">
+            <div class="text">
+                The area containing the image in this row is defined to be:<br/>
+                <ul>
+                    <li>48% in the wide breakpoint</li>
+                    <li>48% in medium breakpoint</li>
+                    <li>98% in the narrow breakpoint</li>
+                </ul>
+                <h4>Actual values</h4>
+
+                <div id="img2-debug"></div>
+            </div>
+        </div>
+        
+        <div class="cf"></div>
+        <div class="g1 grid">
+            <h3>Third test</h3>
+        </div>
+		<div class="g1 grid">
+        	<div class="image">
+				<img id ="img1" src="http://demo.wew.io/img/vpw_1024/bp_w/pc/w_98/m_98/n_98//http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
+			</div>
+       	</div>
+		<div class="g1 grid">
+            <div class="text">
+                The area containing the image in this row is defined to be:<br/>
+                <ul>
+                    <li>98% in the wide breakpoint</li>
+                    <li>98% in medium breakpoint</li>
+                    <li>98% in the narrow breakpoint</li>
+                </ul>
+                <h4>Actual values</h4>
+
+                <div id="img1-debug"></div>
+            </div>
+        </div>       
+		
+		<div class="cf"></div>
+	
 	</div>
+	         
+
 	<footer>
 
 	</footer>
+
 </div> <!--! end of #container -->
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+
+<script>
+/*For debug*/
+
+$(window).load(function () {
+    writeImgDebug();
+});
+
+
+function writeImgDebugImg(imgSelector, container){
+
+    var newImg = new Image();
+    var src = $(imgSelector).attr("src");
+    console.log(src);
+    newImg.src = src;
+    var height = newImg.height;
+    var width = newImg.width;
+    console.log ('The image size is '+width+'*'+height);
+
+    $(imgSelector + "-debug").html("Real image size: " + width + "x" + height + "<br/>container size: " + $(container).css("width") + " x " + $(container).css("height"));
+}
+
+function writeImgDebug(){
+    writeImgDebugImg("#img1", ".g1 .image");
+    writeImgDebugImg("#img2", ".g2 .image");
+    writeImgDebugImg("#img3", ".g3 .image");
+}
+
+$(window).resize(function() {
+writeImgDebug();
+});
+
+</script>
 
 </body>
 </html>

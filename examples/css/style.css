@@ -1,13 +1,11 @@
 
 /************Reset**************/
-html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section { 
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, li, form, fieldset, legend, label, table, header, footer, nav, section { 
 	margin: 0; 
 	padding: 0;
 	border: 0;
 } 
-ol, ul { 
-	list-style: none; 
-}
+
 header, footer, nav, section, article, hgroup, figure {
 	display: block;	
 }
@@ -22,15 +20,95 @@ body {
 	font: 100%/1.5 'Gill Sans', 'Droid Sans', 'Calibri', 'Lucida Grande', 'Trebuchet MS', 'Helvetica Neue', 'Arial', sans-serif; 
 	color: #000;
 	background: url(../img/linen_texture.png) #fff; 
-	text-align: center;
 }
 #main{
-	width:70%;
 	margin: auto;
 	padding: 10%;
-	  background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.7);
     border: 1px solid #777;
+	max-width:1024px;
 }
 img{
 	max-width: 100%;
+}
+.image img{
+	width:100%;
+}
+.text{
+
+	text-align: left;
+	padding:5%;
+}
+.cf:before, .cf:after {content:"";display:table} /* For modern browsers */
+.cf:after {clear:both}
+.cf {zoom:1} /* For IE 6/7 (trigger hasLayout) */
+
+
+/* MOBILE PORTRAIT */
+@media only screen and (min-width: 320px) {
+
+}
+
+/* MOBILE LANDSCAPE */
+@media only screen and (min-width: 480px) {
+
+}
+
+/* SMALL TABLET */
+@media only screen and (min-width: 600px) {
+
+}
+/*HEADER TRIX*/
+
+@media only screen and (max-width: 1250px) {
+    h1{font-size: 2em}
+}
+@media only screen and (max-width: 857px) {
+    h1{font-size: 1.7em}
+}
+@media only screen and (max-width: 644px) {
+    h1{font-size: 1.5em}
+}
+@media only screen and (max-width: 480px) {
+
+    h1{font-size: 4em;padding: 0.3em; margin: 0}
+    h2{font-size: 1.7em;margin:0 -1em;padding:0.3;text-align:center}
+}
+
+/* TABLET/NETBOOK */
+@media only screen and (min-width: 768px) {
+
+
+	/* COLUMN GRID */
+	.g1,.g2,.g3,.g4 {display:inline; float: left}
+
+	/* 2 COLUMN GRID */
+    .g4 {width:48.0%}
+    .g3 {width:48.0%}
+	.g2 {width:48.0%}
+	.g1 {width:98.0%}
+}
+
+/* LANDSCAPE TABLET/NETBOOK/LAPTOP */
+@media only screen and (min-width: 1100px) {
+
+
+	/* 3 COLUMN GRID */
+    .g4 {width:62%}
+    .g3 {width:31%}
+	.g2 {width:48.0%;}
+	.g1 {width:98.0%;max-width:1024px;}
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+/* DESKTOP */
+
+
+
+/* WIDESCREEN */
+/* Increased body size for legibility */
+@media only screen and (min-width: 1400px) {
+	body {font-size:116.5%;); max-width:1440px} /* 18.5px / 28px */
 }

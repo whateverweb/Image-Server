@@ -56,12 +56,12 @@ See [example](https://github.com/whateverweb/Image-Server/tree/master/examples/c
     <th>Name and value</th><th>Description</th><th>Example</th>
   </tr>
   <tr>
-    <td><pre><code>px_<number></code></pre></td>
+    <td><pre><code>px_&lt;number&gt;</code></pre></td>
     <td>Resize to a specific size</td>
     <td>px_320</td>
   </tr>
   <tr>
-    <td><pre><code>@_<number></code></pre></td>
+    <td><pre><code>@_&lt;number&gt;</code></pre></td>
     <td>The pixel ratio: For example `@_2` for Retina displays. Also note that high-DPI images are compressed much more than other images, so the image weight is quite acceptable.</td>
     <td>@_1.5</td>
   </tr>  
@@ -127,12 +127,12 @@ In this mode, required parameters are:
     <th>Name and value</th><th>Description</th><th>Example</th>
   </tr>
   <tr>
-    <td><pre><code>@_<number></code></pre></td>
+    <td><pre><code>@_&lt;number&gt;</code></pre></td>
     <td>The pixel ratio: For example `@_2` for Retina displays</td>
     <td>@_1.5</td>
   </tr>
   <tr>
-    <td><pre><code>vpw_<number></code></pre></td>
+    <td><pre><code>vpw_&lt;number&gt;</code></pre></td>
     <td>Set the default vierport width, if nothing else is provided</td>
     <td>vpw_960</td>
   </tr>  <tr>
@@ -144,15 +144,15 @@ In this mode, required parameters are:
     <td>Unit used by Image server when resizing. `pc` and `px` supported.</td>
     <td>pc</td>
   </tr><tr>
-    <td><pre><code>wide_<number></code></pre></td>
+    <td><pre><code>wide_&lt;number&gt;</code></pre></td>
     <td>Scale image to 'number' <code>pc</code> or <code>px</code>  in breakpoint 'wide'</td>
     <td>wide_90</td>
   </tr><tr>
-    <td><pre><code>medium_<number></code></pre></td>
+    <td><pre><code>medium_&lt;number&gt;</code></pre></td>
     <td>Scale image to 'number' <code>pc</code> or <code>px</code>  in breakpoint 'medium'</td>
     <td>medium_80</td>
   </tr><tr>
-    <td><pre><code>narrow_<number></code></pre></td>
+    <td><pre><code>narrow_&lt;number&gt;</code></pre></td>
     <td>Scale image to 'number' <code>pc</code> or <code>px</code>  in breakpoint 'narrow'</td>
     <td>narrow_100</td>
   </tr><tr>

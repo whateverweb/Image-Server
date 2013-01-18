@@ -11,30 +11,30 @@ Please note that some of the examples use cookies to communicate client side inf
 2. Register an application to get an application key and service URL.
 3. You might also what to consider cnaming the service to the same domain as your site is living on. I.e. img.yoursite.com.
 
-Your service URL will typically be `http://<your-id>.wew.io/img/`.
+Your service URL will typically be `http://img.<your-id>.wew.io/`.
 
 ## Basic usage
 
 The URL pattern is:
-`http://demo.wew.io/img/<options>/<url-to-img>`
+`http://img.demo.wew.io/<options>/<url-to-img>`
 
 The valid options are listed below. 
 
 Simplest example is to just tell the Image Server to resize an image according to screen size. The service will look in WURFL to determine the size of the image.
 
-	<img src="http://demo.wew.io/img/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
+	<img src="http://wew.demo.wew.io/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
 
 To scale an image to an absolute width 320px, create your `img`-url like in the example below. If requested width exceeds requesting device's capability returned image will be scaled to 100% of device width.
 
-	<img src="http://demo.wew.io/img/px_320/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
+	<img src="http://img.demo.wew.io/px_320/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
 
 To cater for high-DPI screens, such as retina, the "@ notation" is used:
 
-	<img src="http://demo.wew.io/img/@_2/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
+	<img src="http://img.demo.wew.io/@_2/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
 
 Combining the two latter examples:
 
-	<img src="http://demo.wew.io/img/@_2/px_320/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
+	<img src="http://img.demo.wew.io/@_2/px_320/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg" alt="Butterfly" />
 
 This will actually return an image which is 640 physical pixels wide.
 
@@ -101,7 +101,7 @@ Note the name of the cookie, and that the cookie domain must be the same as your
 
 You can define as many breakpoints as you want. Remember to define the same breakpoints, and the desired behavior, in the image `src`:
 
-	http://demo.wew.io/img/vpw_1024/bp_w/pc/w_31/m_48/n_98/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg
+	http://img.demo.wew.io/vpw_1024/bp_w/pc/w_31/m_48/n_98/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg
 
 In this case the parameters tell thes image server this:
 

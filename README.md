@@ -103,7 +103,7 @@ You can define as many breakpoints as you want. Remember to define the same brea
 
 	http://img.demo.wew.io/vpw_1024/bp_w/pc/w_31/m_48/n_98/http://farm1.staticflickr.com/154/369525606_c77b69e92c_o_d.jpg
 
-In this case the parameters tell thes image server this:
+In this case the parameters tell the image server this:
 
 * `vpw_1024`: The default viewport width, if nothing else is available is 1024px
 * `bp_w`: If nothing else is provided, the default breakpoint is "w"

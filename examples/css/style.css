@@ -15,7 +15,11 @@ legend {
 /************End Reset**************/
 
 /************Global**************/
-
+h1{
+	text-align: center;
+	text-shadow: rgb(190, 190, 190) 0px 1px 0px, #555 0px -1px ;
+	color:#333;
+}
 body { 
 	font: 100%/1.5 'Gill Sans', 'Droid Sans', 'Calibri', 'Lucida Grande', 'Trebuchet MS', 'Helvetica Neue', 'Arial', sans-serif; 
 	color: #000;
@@ -31,11 +35,12 @@ body {
 img{
 	max-width: 100%;
 }
+
 .image img{
 	width:100%;
 }
-.text{
 
+.text{
 	text-align: left;
 	padding:5%;
 }
@@ -71,7 +76,7 @@ img{
 }
 @media only screen and (max-width: 480px) {
 
-    h1{font-size: 4em;padding: 0.3em; margin: 0}
+    h1{font-size: 2em;padding: 0.3em; margin: 0}
     h2{font-size: 1.7em;margin:0 -1em;padding:0.3;text-align:center}
 }
 

@@ -19,6 +19,8 @@ In the image URL in our markup, we state that for breakpoint 'w' we want an imag
 The viewport width and breakpoint name is shared with the server using a cookie. Please note that this means that the webserver and imageserver needs to be in the same domain so the cookie will be sent to the image server.
 Also, some Edge server caching mechanisms might not feel too good about this approach.
 
+[Live example](http://demo.wew.io/Image-Server/examples/cookie-example/)
+
 [More details](https://github.com/whateverweb/Image-Server/blob/master/README.md)
 
 [Image credits](http://www.flickr.com/photos/bengchye_loo/369525606/sizes/o/in/photostream/) in examples.

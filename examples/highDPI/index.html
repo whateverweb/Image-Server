@@ -27,22 +27,8 @@
 </div> <!--! end of #container -->
 <script type="text/javascript">
 function s(i){
-    var src =i.src
-    var bytes = 0;
-    var xhr = new XMLHttpRequest();
-    xhr.open('HEAD', src, true);
-    xhr.onreadystatechange = function(){
-      if ( xhr.readyState == 4 ) {
-        if ( xhr.status == 200 ) {
-          bytes=  xhr.getResponseHeader('Content-Length');
-        } else {
-          bytes = "[error]";
-        }
-      }
-    };
-    xhr.send();
     var ndiv = document.createElement("div");
-    ndiv.innerHTML="Size: "+bytes+ " bytes. " + i.naturalWidth + 'x' + i.naturalHeight;
+    ndiv.innerHTML="Size: " + i.naturalWidth + 'x' + i.naturalHeight;
     document.getElementById(i.id).parentNode.appendChild(ndiv);
 
 }

@@ -17,7 +17,7 @@
         var existing = readCookie("RESS");
         var bp;
 
-        //set default grid values
+        //set break point
         if (vpw >= 1024) {
             vpw = 1024;
             bp = "w";

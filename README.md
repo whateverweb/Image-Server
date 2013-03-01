@@ -89,11 +89,16 @@ To get the most out of "RWD mode", a short little JavaScript is needed to commun
         } else {
             bp = "n";
         }
+        
+        // Set devicePixelRatio for use on retina screens
+        var dpr = 1;
+        if(window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
+        console.log('DevicePixelRatio' + dpr);
 
         // Set a cookie with the client side capabilities.
         var ccapDate = new Date()
         ccapDate.setFullYear(ccapDate.getFullYear() + 1);
-        d.cookie = 'RESS=vpw.' + vpw + '|bp.' + bp + '; expires=' + ccapDate.toUTCString() + '; path=/; domain=.wew.io';
+        d.cookie = 'RESS=vpw.' + vpw + '|bp.' + bp '|dpr.' + dpr + '; expires=' + ccapDate.toUTCString() + '; path=/; domain=.wew.io';
 
     }(window, document));
 

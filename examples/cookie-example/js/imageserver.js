@@ -27,7 +27,7 @@
             bp = "n";
         }
         
-        // Set devicePixelRatio for used on retina screens
+        // Set devicePixelRatio for use on retina screens
         var dpr = 1;
         if(window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
         console.log('DevicePixelRatio' + dpr);

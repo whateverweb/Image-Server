@@ -26,12 +26,18 @@
         } else {
             bp = "n";
         }
+        
+        // Set devicePixelRatio for used on retina screens
+        var dpr = 1;
+        if(window.devicePixelRatio !== undefined) dpr = window.devicePixelRatio;
+        console.log('DevicePixelRatio' + dpr);
 
         // Set a cookie with the client side capabilities. 
         // There is two specified groups which can be used to scale images to a predefined width in pixels using:
         // http://<SERVICE_URL>/gn_<GROUPNAME>/<IMG_URL>
+        // Make sure to use your own domain
         var ccapDate = new Date()
         ccapDate.setFullYear(ccapDate.getFullYear() + 1);
-        d.cookie = 'RESS=vpw.' + vpw + '|bp.' + bp + '|g.groupName1.320' + '|g.groupName2.640' + '; domain=*'
+        d.cookie = 'RESS=vpw.' + vpw + '|bp.' + bp + '|g.groupName1.320' + '|g.groupName2.640' + '|dpr.' + dpr + '; domain=*';
 
     }(window, document));

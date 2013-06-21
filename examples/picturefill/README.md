@@ -7,5 +7,5 @@ The Picturefill implementation supports viewport breakpoints and retina resoluti
 In the example we've defined breakpoints at 320, 480 and 1000 pixels and also defined highres image URLs for retina displays.
 
 [Live demo](http://demo.wew.io/Image-Server/examples/picturefill/)
-
+[Read more](http://docs.whateverweb.com/documentation/combining-the-image-server-with-picturefill/)
 [Image credits](http://www.flickr.com/photos/bengchye_loo/369525606/sizes/o/in/photostream/) in examples.
